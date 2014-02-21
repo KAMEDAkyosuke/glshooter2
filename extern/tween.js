@@ -188,7 +188,7 @@ tm.anim = tm.anim || {};
         
         _updateTime: function() {
             if (this.isPlaying) {
-                this._setTime((gls2.core.frame * 1000/gls2.core.fps) - this.startTime);
+                this._setTime(Math.floor(gls2.core.frame * 1000/60) - this.startTime);
                 gls2.core.setTimeoutF(arguments.callee.bind(this), 1);
             }
         },
